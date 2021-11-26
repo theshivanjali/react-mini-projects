@@ -1,0 +1,182 @@
+:root {
+    --ff-sans: "Josefin Sans", sans-serif;
+    --base-font: 1.6rem;
+    --fw-normal: 400;
+    --clr-white: hsl(0, 0%, 100%);
+    --clr-card-bg: hsl(235, 24%, 19%);
+    --clr-blue: hsl(220, 98%, 61%);
+    --clr-red: hsl(0, 63%, 45%);
+    --clr-gb-1: hsl(236, 33%, 92%);
+    --clr-gb-2: hsl(234, 39%, 75%);
+    --clr-gb-3: hsl(233, 14%, 35%);
+    --clr-gb-4: hsl(235, 19%, 24%);
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    font-size: 62.5%;
+    position: relative;
+  }
+  
+  html,
+  body {
+    min-height: 100%;
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  img {
+    user-select: none;
+  }
+
+  body {
+    font: var(--fw-normal) var(--base-font) var(--ff-sans);
+    background: rgb(123,60,162);
+    background: linear-gradient(56deg, rgba(123,60,162,1) 28%, rgba(33,16,115,0.938813025210084) 73%);
+    padding-top: 8rem;
+    width: min(85%, 54rem);
+    margin: auto;  
+  }
+
+/* INPUT AND BUTTON */
+
+input,
+button {
+  font: inherit;
+  border: 0;
+  background: transparent;
+}
+
+
+input:focus,
+button:focus {
+  outline: 0;
+}
+
+.add {
+    margin: 4rem 0 2.5rem 0;
+    border-radius: 0.5rem;
+  }
+
+
+/* ALL ARE CARDS  */
+
+.card {
+    background-color: var(--clr-card-bg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.9rem 2rem;
+    gap: 2rem;
+  }
+
+header.card {
+    background: transparent;
+    padding: 0;
+    align-items: flex-start;
+  }
+  
+header.card h1 {
+    color: var(--clr-white);
+    letter-spacing: 1rem;
+    font-weight: 900;
+    font-size: calc(var(--base-font) * 2);
+  }
+
+/* ADD FORM */
+
+.add-form {
+    display: flex;
+    width: 100%;
+    align-items: baseline;
+}
+
+.txt-container{
+    flex: 1;
+  }
+
+.add-form .txt-container .txt-input {
+width: 100%;
+padding: 0.7rem 0;
+color: var(--clr-gb-1);
+}
+
+
+/* ADD BUTTON */
+
+
+.card .btn-container{
+width: 2.5rem;
+height: 2.5rem;
+border: 0.1rem solid var(--clr-gb-3);
+border-radius: 50%;
+justify-content: center;
+position: relative;
+}
+  
+.card .btn-container #add-btn {
+color: var(--clr-gb-2);
+font-size: var(--base-font);
+transition: color 0.3s ease;
+width: 100%;
+height: 100%;
+align-items: center;
+justify-content: center;
+}
+
+.card .btn-container:hover {
+background: var(--clr-blue);
+color: var(--clr-white);
+}
+
+/* List Items */
+
+.todos .card:first-child {
+    border-radius: 0.5rem 0.5rem 0 0;
+  }
+
+.todos > * + * {
+    border-top: 0.2rem solid var(--clr-gb-4);
+  }
+
+.todos .todo-item{
+    display: flex;
+    color: var(--clr-gb-2);
+}
+
+.todos .todo-item:hover {
+    color: var(--clr-gb-1);
+}
+
+.card .todo-item .cb-input {
+  transform: scale(1.8);
+  opacity: 0;
+}
+
+.card .todo-item .check {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+.delete-btn{
+    color:var(--clr-red);
+    cursor: pointer;
+    opacity: 0.3;
+}
+
+.delete-btn:hover{
+  opacity: 0.8;
+  transition: opacity 0.5s ease;
+}
